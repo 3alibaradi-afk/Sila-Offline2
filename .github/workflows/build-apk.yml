@@ -37,7 +37,7 @@ jobs:
         run: |
           SDKMANAGER="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager"
           yes | "$SDKMANAGER" --licenses >/dev/null || true
-          "$SDKMANAGER" "platforms;android-37.0" "build-tools;37.0.0"
+          "$SDKMANAGER" "platforms;android-37.0""build-tools;37.0.0"
           
       - name: Build APK
         working-directory: extracted/SilaOfflineMVP1
