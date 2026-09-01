@@ -14,9 +14,9 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4    
         
-        - name: Extract Android project
+      - name: Extract Android project
         run: |
           mkdir -p extracted
           unzip -q SilaOfflineMVP1-GitHubReady.zip -d extracted
