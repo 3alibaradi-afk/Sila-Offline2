@@ -15,12 +15,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Extract Android project
+        
+        - name: Extract Android project
         run: |
           mkdir -p extracted
           unzip -q SilaOfflineMVP1-GitHubReady.zip -d extracted
           ls -la extracted/SilaOfflineMVP1
+
+      - name: Set compatible minSdk
+        run: |
+          sed -i 's/minSdk = 23/minSdk = 24/' extracted/SilaOfflineMVP1/app/build.gradle.kts
+          grep "minSdk" extracted/SilaOfflineMVP1/app/build.gradle.kts
 
       - name: Set up Java 17
         uses: actions/setup-java@v4
